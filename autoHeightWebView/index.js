@@ -5,7 +5,7 @@ import {StyleSheet, Platform, ViewPropTypes} from 'react-native';
 import PropTypes from 'deprecated-react-native-prop-types';
 
 import {WebView} from 'react-native-webview';
-
+import ShapePropTypes from 'prop-types'
 import {
   topic,
   reduceData,
@@ -96,8 +96,8 @@ const AutoHeightWebView = React.memo(
 
 AutoHeightWebView.propTypes = {
   onSizeUpdated: PropTypes.func,
-  files: PropTypes.arrayOf(
-    PropTypes.shape({
+  files: ShapePropTypes.arrayOf(
+    ShapePropTypes.shape({
       href: PropTypes.string,
       type: PropTypes.string,
       rel: PropTypes.string,
@@ -109,7 +109,7 @@ AutoHeightWebView.propTypes = {
   viewportContent: PropTypes.string,
   scrollEnabledWithZoomedin: PropTypes.bool,
   // webview props
-  originWhitelist: PropTypes.arrayOf(PropTypes.string),
+  originWhitelist: ShapePropTypes.arrayOf(PropTypes.string),
   onMessage: PropTypes.func,
   scalesPageToFit: PropTypes.bool,
   source: PropTypes.object,
